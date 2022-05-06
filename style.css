@@ -1,0 +1,15 @@
+*
+{
+    box-sizing:border-box;
+    margin:0.5px;
+    padding:1px;
+
+}
+
+body    {
+    background: #ffffff;
+    color: #000000;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;}
+
+

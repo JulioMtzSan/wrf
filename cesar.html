@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<body>
+    <style>
+			
+        iframe {
+            justify-content: center;
+            position:relative;
+            left:20px;
+            top:-100px;
+            width: 1600px;
+            height: 800px;
+            border:0;
+            }
+    </style>
+
+
+            
+        <button type="button" onclick="displayIframe()" style="margin-bottom:15px;">Precipitación Acumulada</button>
+    <div id="iframeDisplay1"></div>
+
+    <!--CCS-->
+
+<script>
+        function displayIframe() {
+            document.getElementById("iframeDisplay1").innerHTML = "<iframe id=\"forprimerboton\" align=\"right\" src=\"/home/climdes1/webpage/precipitacion.html\"></iframe>";
+    }
+</script>
+</body>
+   
+<body>
+    <style>
+			
+        iframe {
+            justify-content: center;
+            position:relative;
+            left:20px;
+            top:-100px;
+            width: 1600px;
+            height: 800px;
+            border:0;
+            }
+    </style>
+
+        <button type="button" onclick="displayIframe2()" style="margin-bottom:15px;">Temperatura</button>
+    <div id="iframeDisplay2"></div>
+
+    <!--CCS-->
+
+<script>
+        function displayIframe2() {
+            document.getElementById("iframeDisplay2").innerHTML = "<iframe id=\"forsegundoboton\" align=\"right\" src=\"/home/climdes1/webpage/temperatura.html\"></iframe>";
+    }
+</script>
+</body>      
