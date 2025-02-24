@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WRFv4.0 - Productos WRF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Se incluye la fuente Noto Sans Buginese -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Buginese&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Noto Sans Buginese', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2; /* Gris claro */
+      color: #000;
+    }
+    header {
+      background-color: #747474;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .tabs {
+      margin: 20px;
+      text-align: center;
+    }
+    .tab-label {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #cc1c3a;
+      color: #fff;
+      margin-right: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .tab-label:hover, .tab-label.active {
+      background: ;
+    }
+    #iframeContainer2 {
+      margin: 20px;
+      border: 1px solid #ccc;
+      min-height: 800px;
+    }
+    .tab-content {
+      display: none;
+      width: 100%;
+      height: 1000px;
+      border: 0;
+    }
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Weather Research and Forecast</h1>
+    <p>
+      Consulta los productos del modelo WRF para los próximos 7 días. 
+      Cobertura: México, Centroamérica, Golfo de México y Pacífico Oriental.
+    </p>
+  </header>
+
+  <section>
+    <h2 style="text-align: center;">WRFV4.1</h2>
+    <div class="tabs">
+      <span class="tab-label" data-tab="precipitacion.html">Precipitación cada hora</span>
+      <span class="tab-label" data-tab="precipitacionacumulada.html">Precipitación Acumulada</span>
+      <span class="tab-label" data-tab="temperatura.html">Temperatura</span>
+    </div>
+    <div id="iframeContainer2">
+      <iframe src="precipitacion.html" class="tab-content" data-tab="precipitacion.html" allowfullscreen></iframe>
+      <iframe src="precipitacionacumulada.html" class="tab-content" data-tab="precipitacionacumulada.html" allowfullscreen></iframe>
+      <iframe src="temperatura.html" class="tab-content" data-tab="temperatura.html" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <script>
+    const tabLabels = document.querySelectorAll('.tab-label');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    function activateTab(tabSrc) {
+      console.log("Activando tab: " + tabSrc);
+      tabLabels.forEach(label => label.classList.remove('active'));
+      const activeLabel = document.querySelector(`.tab-label[data-tab="${tabSrc}"]`);
+      if (activeLabel) {
+        activeLabel.classList.add('active');
+      } else {
+        console.error("No se encontró la etiqueta para " + tabSrc);
+      }
+      
+      tabContents.forEach(content => content.classList.remove('active'));
+      const activeContent = document.querySelector(`.tab-content[data-tab="${tabSrc}"]`);
+      if (activeContent) {
+        activeContent.classList.add('active');
+      } else {
+        console.error("No se encontró el contenido para " + tabSrc);
+      }
+    }
+
+    tabLabels.forEach(label => {
+      label.addEventListener('mouseenter', () => {
+        const tabSrc = label.getAttribute('data-tab');
+        activateTab(tabSrc);
+      });
+      label.addEventListener('click', () => {
+        const tabSrc = label.getAttribute('data-tab');
+        activateTab(tabSrc);
+      });
+    });
+
+    if(tabLabels.length > 0){
+      activateTab(tabLabels[0].getAttribute('data-tab'));
+    }
+  </script>
+</body>
+</html>
+
