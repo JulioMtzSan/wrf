@@ -6,7 +6,7 @@ token = os.environ.get("GITHUB_TOKEN")
 if not token:
     raise Exception("No se encontró la variable de entorno GITHUB_TOKEN.")
 
-username = "JulioMtzSan"
+username = "pronosticosnumericos"
 # Construye la URL remota con el token
 remote_url = f"https://{username}:{token}@github.com/{username}/wrf.git"
 
