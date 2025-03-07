@@ -8,48 +8,21 @@
   <body style='background-color: #ffffff;'>
     <div id='ipDiv'></div>
     <script>
+      // Generar un array con las imágenes desde 'prcpacum/1.jpg' hasta 'prcpacum/169.jpg'
+      var imagesArray = [];
+      for (var i = 1; i <= 169; i++) {
+        imagesArray.push('prcpacum/' + i + '.jpg');
+      }
+
       ip = new ImagePlayer({
-        
         element: 'ipDiv',
-        images: [  
-          'prcpacum/2.jpg',
-          'prcpacum/3.jpg',
-          'prcpacum/4.jpg',
-          'prcpacum/5.jpg',
-          'prcpacum/6.jpg',
-          'prcpacum/7.jpg',
-          'prcpacum/8.jpg',
-          'prcpacum/9.jpg',
-          'prcpacum/10.jpg',
-          'prcpacum/11.jpg',
-          'prcpacum/12.jpg',
-          'prcpacum/13.jpg',
-          'prcpacum/14.jpg',
-          'prcpacum/15.jpg',
-          'prcpacum/16.jpg',
-          'prcpacum/17.jpg',
-          'prcpacum/18.jpg',
-          'prcpacum/19.jpg',
-          'prcpacum/20.jpg',
-          'prcpacum/21.jpg',
-          'prcpacum/22.jpg',
-          'prcpacum/23.jpg',
-          'prcpacum/24.jpg',
-          'prcpacum/25.jpg',
-          'prcpacum/26.jpg',
-          'prcpacum/27.jpg',
-          'prcpacum/28.jpg',
-          'prcpacum/29.jpg',                                                  
-        ],
+        images: imagesArray,
         autoplay: 200,
         interval: 200,
-        width : "5000px",
-        height : "10000px",
-        icondir:  './'
-        
-        
+        width : "500px",
+        height : "1000px",
+        icondir: './'
       });
     </script>
   </body>
 </html>
-

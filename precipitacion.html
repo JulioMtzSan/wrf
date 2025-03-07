@@ -8,42 +8,20 @@
   <body style='background-color: #ffffff;'>
     <div id='ipDiv'></div>
     <script>
+      // Generar un array con las imágenes desde 'prcp/1.jpg' hasta 'prcp/169.jpg'
+      var imagesArray = [];
+      for (var i = 1; i <= 169; i++) {
+        imagesArray.push('prcp/' + i + '.jpg');
+      }
+
       ip = new ImagePlayer({
-        
         element: 'ipDiv',
-        images: [  
-          'prcp/1.jpg',
-          'prcp/2.jpg',
-          'prcp/3.jpg',
-          'prcp/4.jpg',
-          'prcp/5.jpg',
-          'prcp/6.jpg',
-          'prcp/7.jpg',
-          'prcp/8.jpg',
-          'prcp/9.jpg',
-          'prcp/10.jpg',
-          'prcp/11.jpg',
-          'prcp/12.jpg',
-          'prcp/13.jpg',
-          'prcp/14.jpg',
-          'prcp/15.jpg',
-          'prcp/16.jpg',
-          'prcp/17.jpg',
-          'prcp/18.jpg',
-          'prcp/19.jpg',
-          'prcp/20.jpg',
-          'prcp/21.jpg',
-          'prcp/22.jpg',
-          'prcp/23.jpg',
-          'prcp/24.jpg',
-        ],
+        images: imagesArray,
         autoplay: 200,
         interval: 200,
         width : "500px",
         height : "1000px",
-        icondir:  './'
-        
-        
+        icondir: './'
       });
     </script>
   </body>
