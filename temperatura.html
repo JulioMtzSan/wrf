@@ -8,10 +8,10 @@
   <body style='background-color: #ffffff;'>
     <div id='ipDiv'></div>
     <script>
-      // Generar un array con las imágenes desde 'tmp/1.jpg' hasta 'tmp/169.jpg'
+      // Generar un array con las imágenes desde 'tmp/t2m1.jpg' hasta 'tmp/t2m168.jpg'
       var imagesArray = [];
-      for (var i = 1; i <= 169; i++) {
-        imagesArray.push('tmp/' t2m+ i + '.jpg');
+      for (var i = 1; i <= 168; i++) {
+        imagesArray.push('tmp/t2m' + i + '.jpg');
       }
 
       ip = new ImagePlayer({
@@ -19,10 +19,11 @@
         images: imagesArray,
         autoplay: 200,
         interval: 200,
-        width : "500px",
-        height : "1000px",
+        width: "500px",
+        height: "1000px",
         icondir: './'
       });
     </script>
   </body>
 </html>
+
